@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { homeIllustration } from "@/assets";
+import { avatar, homeIllustration } from "@/assets";
 import Image from "next/image";
 
 export default function Home() {
@@ -94,14 +94,14 @@ export default function Home() {
                       blockchain technology. Highly recommended!"
                     </p>
                     <div className="flex items-center">
-                      <img
-                        src="/placeholder.svg"
+                      <Image
+                        src={avatar}
                         alt={`Student ${i}`}
                         className="w-12 h-12 rounded-full mr-4"
                       />
                       <div>
                         <p className="font-semibold text-[#004080]">
-                          Student Name
+                          Student {i}
                         </p>
                         <p className="text-sm text-gray-500">Web Developer</p>
                       </div>

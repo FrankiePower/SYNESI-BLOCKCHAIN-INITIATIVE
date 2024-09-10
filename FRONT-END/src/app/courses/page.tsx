@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const CourseCard = ({ title, description, image, progress }) => (
+const CourseCard = ({ title, description, image, progress } : any) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden">
     <img src={image} alt={title} className="w-full h-40 object-cover" />
     <div className="p-4">

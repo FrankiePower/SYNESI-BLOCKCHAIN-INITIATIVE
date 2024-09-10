@@ -20,12 +20,19 @@ export async function verifyEns(ensName) {
   }
 }
 
-async function getAddress(ensName) {
+export async function getAddress(ensName) {
   try {
     const address = await web3.ens.getAddress(ensName);
-    console.log("getting address");
-    console.log(address);
     return address;
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+}
+
+export async function getEns(address) {
+  try {
+    const ens = await web3.eth.ens.getName(address);
+    return ens;
   } catch (error) {
     console.error("An error occurred:", error);
   }
@@ -38,8 +45,6 @@ async function getTextRecords(ensName) {
       "name",
       "avatar",
     ]);
-    console.log("getting records");
-    console.log(textRecords);
     return textRecords;
   } catch (error) {
     console.error("An error occurred:", error);

@@ -6,5 +6,6 @@ import avatar from './avatar.png';
 export {
     onboardOne,
     homeIllustration,
+    welcomeIllustration,
     avatar,
 }

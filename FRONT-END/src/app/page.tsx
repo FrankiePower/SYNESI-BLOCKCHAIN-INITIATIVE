@@ -1,15 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+// import CustomConnectButton from "@/components/custom-connect-button";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Home() {
-  const [isSplashScreen, setIsSplashScreen] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsSplashScreen(false);
-    }, 5000);
-  });
-
-  return <div>Hello App</div>;
+  return <div className="flex flex-col items-center jusify-center min-h-screen w-full">Hello App <ConnectButton/> </div>;
 }

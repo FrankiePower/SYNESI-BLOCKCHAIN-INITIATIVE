@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const CourseCard = ({ title, description, image, progress } : any) => (
+const CourseCard = ({ title, description, image, progress }: any) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden">
     <img src={image} alt={title} className="w-full h-40 object-cover" />
     <div className="p-4">
@@ -25,7 +25,7 @@ const MyCoursesPage = () => {
       title: "Base Blockchain",
       description:
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ...",
-      image: "/api/placeholder/400/320",
+      image: "/public/base.png",
       progress: 0,
     },
     {
@@ -36,7 +36,7 @@ const MyCoursesPage = () => {
       progress: 0,
     },
     {
-      title: "Optimization",
+      title: "Optimism Blockchain",
       description:
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ...",
       image: "/api/placeholder/400/320",

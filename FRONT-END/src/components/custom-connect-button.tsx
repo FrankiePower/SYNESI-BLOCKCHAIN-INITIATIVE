@@ -26,7 +26,7 @@ export default function CustomConnectButton() {
 
         if (!connected) {
           return (
-            <button onClick={openConnectModal} type="button" className='bg-primary-green text-white py-2 px-5 rounded-lg'>
+            <button onClick={openConnectModal} type="button" className='bg-primary-blue text-white py-2 px-5 rounded-lg'>
               Connect Wallet
             </button>
           );
@@ -52,7 +52,7 @@ export default function CustomConnectButton() {
               cursor: 'pointer',
             }}
 
-            className='bg-primary-green text-white py-2 px-5 rounded-lg'
+            className='bg-primary-blue text-white py-2 px-5 rounded-lg'
           >
             {account.address.slice(0, 6)}...{account.address.slice(-4)}
           </button>

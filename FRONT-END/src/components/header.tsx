@@ -5,11 +5,7 @@ import CustomConnectButton from "./custom-connect-button";
 
 const Header = () => {
   return (
-<<<<<<< HEAD
     <header className="flex items-center justify-between p-4 px-5.5 bg-white shadow-md ">
-=======
-    <header className="flex items-center justify-between p-4 bg-white shadow-md">
->>>>>>> 6b5dd3a0fd4f5c7148944b6bdad615307b9c8361
       <div className="flex items-center">
         <svg className="w-8 h-8 mr-2" viewBox="0 0 24 24" fill="#004080">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />

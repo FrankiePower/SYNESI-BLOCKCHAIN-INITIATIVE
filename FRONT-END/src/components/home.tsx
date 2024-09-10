@@ -90,8 +90,8 @@ export default function Home() {
                 <Card key={i}>
                   <CardContent className="p-6">
                     <p className="text-gray-600 mb-4">
-                      "This course has been incredibly helpful in understanding
-                      blockchain technology. Highly recommended!"
+                    &ldquo;This course has been incredibly helpful in understanding
+                      blockchain technology. Highly recommended!&rdquo;
                     </p>
                     <div className="flex items-center">
                       <Image

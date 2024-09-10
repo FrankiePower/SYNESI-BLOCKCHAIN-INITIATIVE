@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp, Play, Bell } from "lucide-react";
 import Link from "next/link";
+import VideoEmbed from "@/components/youtube-embed";
 
 const LessonAccordion = ({ title, isOpen, toggleOpen }: any) => (
   <div className="border-b border-gray-200">
@@ -46,11 +47,7 @@ const CourseContentPage = () => {
               </Link>
             </div>
             <div className="relative pt-[56.25%]">
-              <img
-                src="/api/placeholder/800/450"
-                alt="Course video thumbnail"
-                className="absolute top-0 left-0 w-full h-full object-cover rounded"
-              />
+              <VideoEmbed videoId="khZrWdAOirw"/>
               <div className="absolute inset-0 flex items-center justify-center">
                 <button className="w-16 h-16 bg-white bg-opacity-75 rounded-full flex items-center justify-center">
                   <Play size={32} className="text-primary-blue" />

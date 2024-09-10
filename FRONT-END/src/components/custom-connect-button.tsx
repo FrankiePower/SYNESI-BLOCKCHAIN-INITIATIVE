@@ -1,7 +1,24 @@
 "use client";
+import { getAddress, getEns } from '@/lib';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { Loader, LoaderIcon } from 'lucide-react';
+import { useState } from 'react';
+import { useAccount } from 'wagmi';
 
 export default function CustomConnectButton() {
+  const [ens, setEns] = useState<string | undefined>("");
+  const account = useAccount();
+
+  const fetchEns = async () => {
+    if(!account.address) return null;
+
+    const ens = await getEns(account.address);
+    console.log("Ens Name", ens);
+    if(ens) setEns(ens);
+  }
+
+  fetchEns();
+
   return (
     <ConnectButton.Custom>
       {({
@@ -47,14 +64,13 @@ export default function CustomConnectButton() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              backgroundColor: '#1B7339',
               border: 'none',
               cursor: 'pointer',
             }}
 
-            className='bg-primary-blue text-white py-2 px-5 rounded-lg'
+            className='bg-primary-blue text-white py-2 px-5 rounded-lg truncate hover:bg-transparent shadow-md border-primary-blue hover:text-primary-blue transition'
           >
-            {account.address.slice(0, 6)}...{account.address.slice(-4)}
+            {ens ? ens : <Loader className="w-3 h-3 animate-spin"/>}
           </button>
         );
       }}

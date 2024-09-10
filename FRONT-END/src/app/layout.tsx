@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "@/components";
 import "@rainbow-me/rainbowkit/styles.css";
 import CustomConnectButton from "@/components/custom-connect-button";
+import Header from "@/components/header";
 // import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const open_sans = Open_Sans({ subsets: ["latin"] });
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${open_sans.className} ${space_grotesk.variable}`}>
         <Providers>
+          <Header/>
           {children}
         </Providers>
       </body>

@@ -12,21 +12,6 @@ const ENSVerificationPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-blue-600">Synesi</h1>
-          <div className="flex items-center">
-            <span className="mr-2">🇬🇧</span>
-            <select className="border-none bg-transparent text-sm">
-              <option>EN</option>
-            </select>
-            <button className="ml-4 px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50">
-              Login
-            </button>
-          </div>
-        </div>
-      </header>
-
       <main className="flex-grow flex items-center justify-center px-4">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md border border-blue-200">
           <h2 className="text-2xl font-semibold mb-6 text-center">

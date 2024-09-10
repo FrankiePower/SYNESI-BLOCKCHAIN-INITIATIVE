@@ -2,26 +2,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="flex items-center justify-between p-4 bg-white">
-        <div className="flex items-center">
-          <svg className="w-8 h-8 mr-2" viewBox="0 0 24 24" fill="#004080">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-          <span className="text-2xl font-bold text-[#004080]">SynesiBlockchain</span>
-        </div>
-        <nav className="hidden md:flex space-x-4">
-          <Link href="#" className="text-gray-600 hover:text-[#004080]">Home</Link>
-          <Link href="#" className="text-gray-600 hover:text-[#004080]">Courses</Link>
-          <Link href="#" className="text-gray-600 hover:text-[#004080]">About</Link>
-          <Link href="#" className="text-gray-600 hover:text-[#004080]">Contact</Link>
-        </nav>
-        <Button className="bg-[#004080] hover:bg-[#003366]">Sign Up</Button>
-      </header>
-
       <main className="flex-grow">
         <section className="py-20 px-4 bg-[#f0f5fa]">
           <div className="container mx-auto flex flex-col md:flex-row items-center">

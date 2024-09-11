@@ -37,8 +37,8 @@ export default function Home() {
               </Link>
             </div>
             <div className="md:w-1/2">
-              <Image
-                src={homeIllustration}
+              <img
+                src={homeIllustration.src}
                 alt="Blockchain Education"
                 className="w-full h-auto"
               />

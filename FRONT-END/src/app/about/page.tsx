@@ -11,8 +11,8 @@ function WelcomePage() {
       <main className="flex justify-center items-center mt-20">
         <div className="w-full flex">
           <div className="w-1/2 pr-8">
-            <Image
-              src={welcomeIllustration}
+            <img
+              src={welcomeIllustration.src}
               alt="Welcome illustration"
               className="object-contain"
             />

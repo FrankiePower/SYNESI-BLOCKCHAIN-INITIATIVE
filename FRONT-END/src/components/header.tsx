@@ -14,7 +14,7 @@ const Header = () => {
         </svg>
 
         <span className="text-2xl font-bold text-primary-blue">Synesi</span>
-        <span className="text-sm absolute left-0 -bottom-6 flex w-[200px] items-center gap-2"><span className="">powered by base</span> <Image src={baseLogo} className="w-3 h-3" alt="base logo" /></span>
+        <span className="text-sm absolute left-0 -bottom-6 flex w-[200px] items-center gap-2"><span className="">powered by base</span> <img src={baseLogo.src} className="w-3 h-3" alt="base logo" /></span>
       </Link>
 
       <nav className="hidden md:flex space-x-4">

@@ -2,7 +2,8 @@
 
 // import CustomConnectButton from "@/components/custom-connect-button";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { Home } from '@/components';
 
-export default function Home() {
-  return <div className="flex flex-col items-center jusify-center min-h-screen w-full">Hello App <ConnectButton/> </div>;
+export default function HomePage() {
+  return <Home/>;
 }

@@ -146,6 +146,7 @@ contract LearningPassport is ERC721, Ownable {
         emit CourseUpdated(_courseId, _modules);
     }
 
+    // Delete course from admin courses
     function deleteCourse(uint256 _courseId) external onlyAdmin {
         require(courses[_courseId].isActive, "Course does not exist");
         require(courses[_courseId].admin == msg.sender, "Not the course admin");
@@ -159,6 +160,7 @@ contract LearningPassport is ERC721, Ownable {
         emit CourseDeleted(_courseId);
     }
 
+    //Enroll learner on dApp course
     function enrollLearner(
         address _address,
         uint256 _courseId
@@ -182,7 +184,7 @@ contract LearningPassport is ERC721, Ownable {
         emit LearnerEnrolled(_address, _courseId);
     }
 
-    // Learner updates progress and gets an NFT on completion
+    //  Update Learner's progress and mint NFT on course completion
     function updateProgress(uint256 _courseId) external onlyLearner {
         require(courses[_courseId].isActive, "Course does not exist");
         require(
@@ -223,6 +225,7 @@ contract LearningPassport is ERC721, Ownable {
         );
     }
 
+    // Remove course from Learner's list of active courses
     function removeCourse(uint256 _courseId) external onlyLearner {
         require(learners[msg.sender].isActive, "Learner is not active");
         require(courses[_courseId].isActive, "Course is not active");

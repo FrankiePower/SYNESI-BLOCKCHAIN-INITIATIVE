@@ -58,21 +58,22 @@ export default function Home() {
                     <img
                       src={baseLogo.src}
                       alt={`Course ${i}`}
-                      className="w-full h-40 object-cover mb-4 rounded"
+                      className="w-full h-40 object-contain mb-4 rounded"
                     />
                     <h3 className="text-xl font-semibold mb-2 text-[#004080]">
-                      Blockchain Course {i}
+                      Build on base
                     </h3>
                     <p className="text-gray-600 mb-4">
-                      Learn the fundamentals of blockchain technology and its
-                      applications.
+                    Learn blockchain fundamentals, smart contracts, and decentralized applications in this beginner-friendly 15-lesson course ...
                     </p>
-                    <Button
-                      variant="outline"
-                      className="w-full text-[#004080] border-[#004080] hover:bg-[#004080] hover:text-white"
-                    >
-                      Enroll Now
-                    </Button>
+                    <Link href="/courses">
+                      <Button
+                        variant="outline"
+                        className="w-full text-[#004080] border-[#004080] hover:bg-[#004080] hover:text-white"
+                      >
+                        Enroll Now
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
@@ -90,8 +91,9 @@ export default function Home() {
                 <Card key={i}>
                   <CardContent className="p-6">
                     <p className="text-gray-600 mb-4">
-                    &ldquo;This course has been incredibly helpful in understanding
-                      blockchain technology. Highly recommended!&rdquo;
+                      &ldquo;This course has been incredibly helpful in
+                      understanding blockchain technology. Highly
+                      recommended!&rdquo;
                     </p>
                     <div className="flex items-center">
                       <Image

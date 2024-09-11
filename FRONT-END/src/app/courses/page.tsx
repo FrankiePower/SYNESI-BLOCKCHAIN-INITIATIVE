@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { optimismLogo, baseLogo, liskLogo } from "@/assets";
+import { baseLogo } from "@/assets";
 
 const CourseCard = ({ title, description, image, progress, slug }: any) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -33,6 +33,7 @@ const MyCoursesPage = () => {
 
   return (
     <main className="p-6">
+      <h2 className="text-2xl mt-3 mb-5 leading-tight tracking-tighter text-primary-blue">All available courses</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course, index) => (
           <CourseCard key={index} {...course} />

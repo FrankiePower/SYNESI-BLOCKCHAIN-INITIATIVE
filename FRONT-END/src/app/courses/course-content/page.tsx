@@ -46,13 +46,13 @@ const CourseContentPage = () => {
                 </button>
               </Link>
             </div>
-            <div className="relative pt-[56.25%]">
-              <VideoEmbed videoId="khZrWdAOirw"/>
-              <div className="absolute inset-0 flex items-center justify-center">
+            <div className="relative">
+                <VideoEmbed videoId="khZrWdAOirw" className="w-full min-h-[300px]"/>
+              {/* <div className="absolute inset-0 flex items-center justify-center">
                 <button className="w-16 h-16 bg-white bg-opacity-75 rounded-full flex items-center justify-center">
                   <Play size={32} className="text-primary-blue" />
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
           <div>

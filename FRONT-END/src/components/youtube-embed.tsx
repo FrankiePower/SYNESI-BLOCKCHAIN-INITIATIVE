@@ -1,6 +1,6 @@
 import React from 'react';
 
-const VideoEmbed = ({ videoId }: { videoId: string }) => {
+const VideoEmbed = ({ videoId, className }: { videoId: string, className: string }) => {
   return (
     <div className="video-responsive">
       <iframe
@@ -11,6 +11,7 @@ const VideoEmbed = ({ videoId }: { videoId: string }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         title="Embedded youtube"
+        className={className}
       />
     </div>
   );

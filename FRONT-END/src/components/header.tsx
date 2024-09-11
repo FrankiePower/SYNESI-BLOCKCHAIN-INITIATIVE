@@ -31,7 +31,9 @@ const Header = () => {
           About
         </Link>
       </nav>
-      <CustomConnectButton />
+      <div>
+        <CustomConnectButton />
+      </div>
     </header>
   );
 };

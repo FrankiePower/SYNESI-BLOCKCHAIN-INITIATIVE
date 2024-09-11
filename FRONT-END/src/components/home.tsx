@@ -96,8 +96,8 @@ export default function Home() {
                       recommended!&rdquo;
                     </p>
                     <div className="flex items-center">
-                      <Image
-                        src={avatar}
+                      <img
+                        src={avatar.src}
                         alt={`Student ${i}`}
                         className="w-12 h-12 rounded-full mr-4"
                       />

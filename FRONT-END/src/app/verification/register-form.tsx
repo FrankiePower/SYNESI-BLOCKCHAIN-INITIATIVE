@@ -3,7 +3,6 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { registerVoter } from "@/assets";
 import { MotionWrapper, VerifiedModal } from "@/components";
 import { verifyEns } from "@/lib";
 import { LoaderCircle } from "lucide-react";

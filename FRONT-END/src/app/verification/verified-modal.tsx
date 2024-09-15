@@ -32,6 +32,7 @@ const VerifiedModal = ({
 }: IverifiedModal) => {
   const [verified, setVerified] = useState(false);
   const [verificationLoading, setVerificationLoading] = useState(false);
+  const [voterType, setVoterType] = useState(0);
 
   const { data: signMessageData, signMessage } = useSignMessage();
 
@@ -69,14 +70,14 @@ const VerifiedModal = ({
         console.log(verifyResult);
 
         if (verifyResult) {
-          // writeContract({
-          //   abi,
-          //   address: "0x0c71752b7FAc2a7d4C2d9190D0d3Dde5a700bDE4",
-          //   functionName: "registerVoter",
-          //   args: [account.address, voterType],
-          // });
-          // console.log("contract called");
-          // console.log(contractLoading);
+          writeContract({
+            abi,
+            address: "0x0c71752b7FAc2a7d4C2d9190D0d3Dde5a700bDE4",
+            functionName: "registerVoter",
+            args: [account.address, voterType],
+          });
+          console.log("contract called");
+          console.log(contractLoading);
 
           setVerified(!!verifyResult);
         }
@@ -104,7 +105,7 @@ const VerifiedModal = ({
   }, [isContractConfirming, isContractConfirmed, contractError]);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 h-screen">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 h-screen -mt-20 -top-10">
       <div className="bg-white rounded-lg shadow-lg p-6 w-4/5 max-w-md">
         {/* Modal Header */}
         <div className="flex items-center justify-between mb-4">
@@ -113,7 +114,7 @@ const VerifiedModal = ({
               {!ethAddress || ethAddress === zeroAddress ? (
                 <BadgeX className="text-red-500 w-6 h-6" />
               ) : (
-                <BadgeCheck className="text-primary-blue w-6 h-6" />
+                <BadgeCheck className="text-green-500 w-6 h-6" />
               )}
             </div>
             <h3 className="ml-3 text-lg font-semibold text-gray-900">
@@ -181,10 +182,29 @@ const VerifiedModal = ({
           </div>
         )}
 
+        <div className="w-full mt-3">
+          <label
+            htmlFor="location"
+            className="block text-sm text-left text-gray-600 font-medium"
+          >
+            Select Voter Location
+          </label>
+          <select
+            id="location"
+            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-green focus:border-primary-green sm:text-sm"
+            onChange={({ target: { value } }) =>
+              setVoterType(parseInt(value) ?? 0)
+            }
+          >
+            <option value={0}>In the Country</option>
+            <option value={1}>Diaspora</option>
+          </select>
+        </div>
+
         {signMessageData && (
           <p
             className={`text-sm text-left mt-2 ${
-              verified ? "text-primary-blue" : "text-red-500"
+              verified ? "text-primary-green" : "text-red-500"
             } `}
           >
             {verified
@@ -200,12 +220,12 @@ const VerifiedModal = ({
               !ethAddress || ethAddress === zeroAddress
                 ? onClose
                 : verified
-                ? () => router.push("/courses")
+                ? () => router.push("/elections")
                 : account.address && (() => verifyOwnership(ensName!))
             }
             className={`${
               account.address
-                ? "bg-primary-blue text-white px-4 py-2 rounded-md hover:bg-primary-dark"
+                ? "bg-primary-green text-white px-4 py-2 rounded-md hover:bg-primary-dark"
                 : ""
             }`}
             disabled={verificationLoading}
